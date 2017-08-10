@@ -1,0 +1,12 @@
+/* TODO: Put your CSS code in here */
+
+.form-container {
+  margin: 20px;
+}
+
+#map {
+  background-color: #E6E6E6;
+  height: 70vh;
+  width: 70%;
+  margin: auto;
+}
