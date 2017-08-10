@@ -1,5 +1,16 @@
 // TODO: Put your JS code in here
 $(document).ready(function() {
+  $.ajax({
+    type: "GET",
+    url: "https://maps.googleapis.com/maps/api/geocode/json?address=berlin&key=AIzaSyDeg7-dCj3eBcqTGtYkDqJrsiJUF9u1KZk",
+    success: function(data) {
+      initMap(52.5200066, 13.404954)
+    },
+    error: function(jqXHR) {
+        console.error(jqXHR.responseText);
+      }
+  })
+
   $('form').submit(function(e) {
     e.preventDefault();
     var address = $('input').val()
@@ -11,8 +22,8 @@ $(document).ready(function() {
         // console.log(data)
         var lat = data.results[0].geometry.location.lat
         var lng = data.results[0].geometry.location.lng
-        console.log(lng)
         console.log(lat)
+        console.log(lng)
         initMap(lat, lng);
       },
       error: function(jqXHR) {
@@ -24,7 +35,7 @@ $(document).ready(function() {
   function initMap(lat, lng) {
         var uluru = {lat: lat, lng: lng};
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
+          zoom: 8,
           center: uluru
         });
         var marker = new google.maps.Marker({
