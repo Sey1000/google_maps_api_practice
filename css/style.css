@@ -1,7 +1,11 @@
 /* TODO: Put your CSS code in here */
 
+body {
+  background-color: #f6f6f6;
+}
+
 .form-container {
-  margin: 20px;
+  margin: 30px 50px;
 }
 
 #map {
